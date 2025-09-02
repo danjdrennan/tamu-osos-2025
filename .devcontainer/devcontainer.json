@@ -1,0 +1,37 @@
+{
+  "name": "OSOS Data Science Devcontainer",
+  "image": "ghcr.io/danjdrennan/tamu-osos-2025/devcontainer:latest",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-python-envs",
+        "ms-toolsai.jupyter",
+        "ms-vscode.live-server",
+        "redhat.vscode-yaml",
+        "vscodevim.vim"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.formatting.provider": "ruff",
+        "python.linting.enabled": true,
+        "jupyter.askForKernelRestart": false
+      }
+    }
+  },
+  "postCreateCommand": "pip install -e /workspace",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode"
+}
