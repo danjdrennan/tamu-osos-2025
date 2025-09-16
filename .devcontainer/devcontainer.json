@@ -1,9 +1,11 @@
 {
   "name": "OSOS Data Science Devcontainer",
-  "image": "ghcr.io/${{ github.repository }}/devcontainer:latest",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   "customizations": {
     "vscode": {
