@@ -1,15 +1,10 @@
 {
   "name": "OSOS Data Science Devcontainer",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "ghcr.io/${{ github.repository }}/devcontainer:latest"
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind"
-  ],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -30,7 +25,6 @@
       }
     }
   },
-  "postCreateCommand": "pip install -e /workspace",
-  "workspaceFolder": "/workspace",
+  "postCreateCommand": "pip install -e .",
   "remoteUser": "vscode"
 }
