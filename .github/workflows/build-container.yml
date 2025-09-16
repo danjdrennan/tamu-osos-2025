@@ -25,6 +25,6 @@ jobs:
         uses: devcontainers/ci@v0.3.1900000417
         with:
           imageName: ghcr.io/${{ github.repository }}/devcontainer
-          cacheFrom: ghcr.io/${{ github.repository }}/devcontainer
+          imageTag: ${{ github.sha }},latest
           push: always
           devcontainerPath: .devcontainer/devcontainer.json
