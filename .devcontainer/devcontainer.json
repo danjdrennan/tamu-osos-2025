@@ -1,6 +1,5 @@
 {
   "name": "OSOS Data Science Devcontainer",
-  "image": "ghcr.io/danjdrennan/tamu-osos-2025/devcontainer:latest",
   "build": {
     "dockerfile": "Dockerfile"
   },
