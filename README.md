@@ -1,19 +1,22 @@
 # TAMU OSOS 2025
 
-Materials for the modules on
+This is a collection of materials prepared for Texas A&M's Open Source for Open
+Science 2025
+[event](https://eeb.tamu.edu/open-source-open-science/open-source-for-open-science-workshop-2025/).
+I've since (and will continue to) added any materials I've prepared that were
+intended as general tutorials in Python.
 
-- Introduction to Python (Trevor Millnar)
-- Python for Data Science (Dan Drennan)
+The design idea in the repo is to implement the `osos` package as a helper for
+loading data and running some scripts. Features of the repo are the
 
-Taught at Texas A&M's OSOS 2025 seminar in College Station, TX.
+- A Dev Container is provided for running the code locally in VS Code or using a
+  GitHub Codespace.
+- Introductory notebooks to get a feel for Numpy, Pandas, and Matplotlib.
+- A minimal CLI app that demonstrates the end result of converting a Jupyter
+  notebook into a fully reproducible script, ideal for making any research
+  deliverable fully reproduce using a configurable CLI.
 
 ## Python for Data Science
-
-### Upload documents
-
-Many of the files available in Google Drive at:
-
-- [Google Drive](https://drive.google.com/drive/u/1/folders/1DvTzzytLlg3ZnBIKHKbGk8AGGeR3iiQq)
 
 ## Dev Container
 
@@ -56,3 +59,38 @@ The software required for using local Dev Containers includes:
 After installing the dependencies, clone the repository and open VS Code inside
 of it. Then VS Code will ask if you want to build the Dev Container for local
 use.
+
+## Notebooks
+
+The notebooks were adapted from scripts written in `./scripts/`. The Numpy
+starts with the fixed width data types numpy supports for storing data, then
+presents ND Arrays, random numbers (with a detailed explanation of how to seed
+experiments), and concludes with a brief demo of the built-in linear algebra
+that is supported.
+
+The pandas introduction focuses on querying data.
+
+A Pytorch introduction was added after the workshop.
+
+All of these could be substantially improved upon.
+
+### Scripts
+
+The notebooks started in `./scripts/` files. This directory also contains a file
+showing how to benchmark code using `timeit`. See the
+`./scripts/benchmarking_ols.py` file for details.
+
+## CLI App
+
+The `app.py` script demonstrates how to
+develop a very simple CLI application for some data science workflows. Its
+intended use is as follows:
+
+```bash
+python app.py              # prints lots of results into the terminal
+python app.py 1>app.csv    # stores the deliverables part in csv but still prints
+python app.py 2>/dev/null  # prints only the deliverables
+```
+
+And you can run `python app.py --help` to see more of that design.
+
